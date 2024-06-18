@@ -1,11 +1,15 @@
+#define BLYNK_TEMPLATE_ID " **********"
+#define BLYNK_TEMPLATE_NAME "*********"
+#define BLYNK_AUTH_TOKEN "***************"
 
-#include <PZEM004Tv30.h>
+#include <WiFiClient.h>
 #include <ESP8266WiFi.h>
 #include <BlynkSimpleEsp8266.h>
+#define BLYNK_PRINT Serial
 
 //variabel untuk koneksi ke blynk
 //token yang didapatkan dari project blink 
-char auth[] = "";
+char auth[] = "BLYNK_AUTH_TOKEN";
 //SSID untuk Wifi
 char ssid[] ="";
 //password Wifi
@@ -21,7 +25,7 @@ void setup() {
   // aktifkan serial
   Serial.begin(9600);
   //koneksi ke blynk
-  Blynk.begin(auth,ssid, pass);
+  Blynk.begin(auth,ssid, pass,"blynk.cloud",80);
 }
 
 void loop() {
